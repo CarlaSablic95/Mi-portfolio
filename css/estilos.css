@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Importar una hoja de estilo significa agregar el link de la hoja de estilo css en html */
+
+/* RESET */
+
+/* El selector ::before inserta algo antes del contenido de cada elemento seleccionado. */
+/* selector ::after para insertar algo después del contenido. */
+
+/* ESTILOS GENERALES*/
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box; /* calcula el ancho y alto total de un elemento sin incluir bordes y padding.*/
+}
+
+/* MOBILE*/
+
+/* ESTILOS PARA FUENTES */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+h2 {
+  letter-spacing: 1.5px;
+}
+
+ul > li {
+	list-style: none;
+}
+
+
+a {
+	color: #595758;
+	text-decoration: none;
+	font-weight: 600;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+/*--------------------------------------------*/
+header {
+	background-image: radial-gradient(circle at 21.51% 21.51%, #ffa8af 0, #ff99aa 16.67%, #f184a1 33.33%, #da6893 50%, #c24c87 66.67%, #ae3881 83.33%, #9d2d81 100%);
+}
+
+/* TÍTULO */
+
+.logo {
+  color: #fff0f3;
+  line-height: 35px;
+  letter-spacing: 5px;
+}
+
+/* IMG */
+
+.img-perfil {
+	width:20%;
+	border-radius: 70%;
+}
+
+.contenedor-lineas{
+	margin: 1rem 0 1.5rem; /* top / right-left / bottom */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linea, .linea2 {
+    width: 100%;
+    max-width: 7rem; /*se adapta al ancho dependiendo el tamaño de la pantalla*/
+    height: 0.20rem;
+    background-color: rgb(142 144 145);
+    border-radius: 1rem;
+    border-color: rgb(116 118 120);
+    margin-right: 0.5em;
+}
+
+.linea2 {
+	margin-right: 0 !important;
+	margin-left: 0.5em;
+}
+
+/* SECCIÓN SOBRE MÍ */
+
+.sobre-mi{
+	background-image: linear-gradient(80deg, #ffd3e0 0, #ffc0d3 25%, #f2a9c4 50%, #df92b6 75%, #ce81ad 100%);
+	padding: 10px;
+	margin: 20px 0 20px 0;
+}
+
+.sobre-mi > p {
+	font-size: 0.9rem;
+}
+
+.about {
+	margin-bottom: 5px;
+}
+
+/* SECCIÓN PROYECTOS */
+
+.proyecto {
+	background-color: #eaeaea;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+.proyecto > a > img {
+	width: 100%;
+	border-radius: 5px;
+}
+
+.descripcion {
+	padding: 5px;
+	border-radius: 5px;
+}
+
+/* SECCIÓN SKILLS */
+
+.contenedor-skills {
+	background-color: rgb(255 228 196);
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+
+.contacto {
+	background-color: rgb(68 66 63);
+    color: rgb(255 255 255);
+    padding: 8px;
+}
+
+.contacto > p > a {
+	color: rgb(255 255 255);
+	font-weight: 100 !important;
+	text-transform: capitalize;
+}
+
+/* BOTÓN IR ARRIBA */
+
+/* 1 rem -> 10px */
+
+.go-top-container {
+	position: fixed;
+	bottom: 4rem; /* 40px */
+	right: 0rem;
+	width: 6.6rem;
+	height: 6.6rem;
+	z-index: -1;
+}
+
+.go-top-button {
+	width: 0rem;
+	height: 0rem;
+	background-color: rgb(107 100 100);
+	border-radius: 50%;
+	cursor: pointer;
+	transition: .2s;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+	position: absolute;
+}
+
+.go-top-button i{
+	position: absolute;
+    font-size: 1.5rem;
+    top: 47%;
+    left: 51%;
+    transform: translate(-50%, -50%) scale(1);
+    color: rgb(205 89 140);
+    transition: .2s;
+}
+
+
+.show {
+	z-index: 10;
+}
+
+.show .go-top-button {
+	animation: popup, .5s, easy-in-out;
+    width: 3.6rem;
+    height: 3.6rem;
+    z-index: 11;
+}
+
+.show > i {
+	transform: translate(-50%; -50%) scale(1);
+}
+
+@keyframes popup {
+	0% {
+		width: 0rem;
+		height: 0rem;
+	}
+
+	50% {
+		width: 8rem;
+		height: 8rem;
+	}
+
+	100% {
+		width: 6.6rem;
+		height: 6.6rem;
+	}
+}
+
+/* MODO NOCTURNO */
+
+.night-mode {
+	width: 2rem;
+    position: absolute;
+    top: 1px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.night-mode > img{
+    width: 100%;
+}
+
+/* MEDIA-QUERIES */
+
+/* TABLETS */
+
+@media (min-width: 768px) {
+	.proyectos {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.proyecto {
+		width: 40% !important;
+	}
+}
+
+/* DESKTOP */
+
+@media (min-width: 1240px) {
+	header {
+		display: flex;
+		justify-content: space-between;
+		padding: 1.5rem;
+	}
+
+	.menu {
+		width: 36rem;
+	}
+
+	.btn-menu {
+		display: none;
+	}
+
+	.menu-items {
+		display: flex;
+    	padding: 0.5rem;
+	}
+
+
+	.menu-items > li{
+		margin-right: 3rem;
+	}
+
+	.menu-items > li > a {
+		color: #ffffff;
+	}
+
+	.proyectos {
+		display: flex !important;
+
+	}
+
+	.proyecto {
+		width: 25.5% !important;
+	}
+
+	.skill-dev > li{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+    display: none;
+}
+
+.skill-icon {
+	width: 5%;
+}
+
+}
